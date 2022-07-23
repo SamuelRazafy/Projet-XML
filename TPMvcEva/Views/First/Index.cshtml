@@ -1,0 +1,334 @@
+﻿@model TPMvcEva.Models.Info
+@using TPMvcEva.Models
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TPMVC</title>
+    <style type="text/css">
+        .planning {
+            width: 72px;
+        }
+
+        .auto-style1 {
+            width: 96px;
+        }
+
+        .auto-style2 {
+            width: 507px;
+        }
+
+        .auto-style3 {
+            margin-left: 6px;
+        }
+
+        #buttonValider {
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+            #buttonValider:hover {
+                background-color: #ADB1B2;
+                transition: 0.7s ease;
+                border-color: transparent;
+            }
+
+        #buttonValideConge {
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+            #buttonValideConge:hover {
+                background-color: #ADB1B2;
+                transition: 0.7s ease;
+                border-color: transparent;
+            }
+    </style>
+</head>
+<body>
+    <form id="form1" action="/First/Verifier" method="post">
+        <div>
+            <table cellspacing="3" cellpadding="3" width="100%" border="0">
+                <tbody>
+                    <tr>
+                        <td bgcolor="#ffcc99">
+                            <img src="conges.jpg" imagealign="Middle" width="100" height="73"><img />
+                            &nbsp;
+                            <asp:label id="Titre"  font-bold="True" font-size="Large">Gestion des congés du personnel</asp:label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#ff9900">
+                            <asp:hyperlink id="Rubrique1"  TabIndex="0">Page1</asp:hyperlink>&nbsp;&nbsp;|&nbsp;
+                            <asp:hyperlink id="Rubrique4"  TabIndex="1">Page2</asp:hyperlink>&nbsp;&nbsp;|&nbsp;
+                            <asp:hyperlink id="Rubrique2"  TabIndex="2">Page3</asp:hyperlink>&nbsp;&nbsp;|&nbsp;
+                            <asp:hyperlink id="Rubrique3"  TabIndex="3">Page4</asp:hyperlink>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <table cellspacing="3" cellpadding="3" width="100%" border="0">
+            <tbody>
+                <tr>
+                    <td>
+                        <p class="planning" align="right">
+                            Nom :
+                        </p>
+                    </td>
+                    <td class="planning">
+                        <div align="left" class="auto-style2">
+                            <input type="text" id="textBoxNom"  name="nom" />
+
+                        </div>
+                    </td>
+                    <td class="auto-style1">
+                        <p class="planning" align="right">
+                            Matricule :
+                        </p>
+                    </td>
+                    <td>
+                        <div align="left">
+                            <input id="textBoxMatricule" type="text" width="291" name="matricule" />&nbsp;
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                        </p>
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td class="auto-style1">
+                        <p>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            &nbsp;
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="planning">
+                        <p class="planning" align="right">Prénoms :
+                    </td>
+                    <td>
+                        <div align="left">
+                            <input id="textBoxPrenom"  width="296" name="prenom" />
+
+                        </div>
+                    </td>
+                    <td class="auto-style1">
+                        <p class="planning" align="right">
+                            Fonction :
+                        </p>
+                    </td>
+                    <td class="planning">
+                        <div align="left">
+                            <input id="textFonction"  width="210" CssClass="auto-style3" name="fonction"/>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+        <p>
+            &nbsp;
+        </p>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tbody>
+                <tr>
+                    <td valign="top" width="143">
+                        <div align="left">
+                            <button type="submit" id="buttonValider"  width="230px" visible="True"
+                                    font-bold="True" forecolor="#C04000" action="Verifier">
+                                Vérifier
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <label id="Label1"  font-size="Large" name="Izy"></label>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+        <p>
+        </p>
+        </p>
+        <p>
+            <panel id="panelPlanning">
+                <TABLE cellspacing="3" cellpadding="6" width="100%" bgcolor="#aaaadd" border="0">
+                    <TR>
+                        <TD>
+                            <P class="planning" align="center">Département</P>
+                        </TD>
+                        <TD>
+                            <P class="planning" align="center">Service</P>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <DIV align="center">
+                                <input id="textBoxDepartement" width="220" readonly="readonly" type="text" name="departement" />
+                            </DIV>
+                        </TD>
+                        <TD>
+                            <DIV align="center">
+                                <input id="textBoxService" width="220" readonly="readonly" type="text" name="service" />
+                            </DIV>
+                        </TD>
+                    </TR>
+                </TABLE>
+            </panel>
+                <P></P> 
+                </form>
+                <form id="form2" >
+                <TABLE cellspacing="3" cellpadding="3" width="100%" border="0">
+                    <TR>
+                        <TD width="10%"></TD>
+                        <TD>
+                            <P class="planning" align="center">Date de début</P>
+                        </TD>
+                        <TD>
+                            <P class="planning" align="center">Date de fin</P>
+                        </TD>
+                        <TD width="5%"></TD>
+                        <TD></TD>
+                        <TD width="10%"></TD>
+                    </TR>
+                    <TR>
+                        <TD></TD>
+                        <TD>
+                            <DIV align="center">
+                                <input type="date" id="calendarDebut"  width="200" forecolor="#FFFFCC" backcolor="#FFCC66"
+                                       showgridlines="True" font-names="Verdana" height="180" daynameformat="FirstLetter" font-size="9pt"
+                                       borderwidth="1px" bordercolor="#FFCC66">
+                               
+
+                            </DIV>
+                        </TD>
+                        <TD>
+                            <DIV align="center">
+                                <input type="date" id="calendarFin"  width="200" forecolor="#663399" backcolor="#FFFFCC"
+                                       showgridlines="True" font-names="Verdana" height="180" daynameformat="FirstLetter" font-size="8pt"
+                                       borderwidth="1px" bordercolor="#FFCC66">
+                                
+
+                            </DIV>
+                        </TD>
+                        <TD></TD>
+
+                        <TD></TD>
+                    </TR>
+                </TABLE>
+           
+        </p>
+        <panel id="panelSaisie"  visible="True">
+            <TABLE width="100%" bgcolor="#ffcc99" border="0">
+                <TR>
+                    <TD width="50%">
+                        <TABLE cellspacing="3" cellpadding="3" bgcolor="#ffcc99" border="0">
+                            <TR>
+                                <TD colspan="4">
+                                    <B>Demande&nbsp;de congés</B>
+                                </TD>
+                            </TR>
+                            <TR>
+                                <TD>Motif :</TD>
+                                <TD>
+
+
+                                    <div class="row row-space">
+                                        <div class="rs-select2 col-2 js-select-simple select--no-search">
+                                            <select id="Departement" name="Departement">
+                                                <option disabled="disabled" selected="selected"></option>
+                                                <option>Congé payé</option>
+                                                <option>Jour férié</option>
+                                                <option>Repos</option>
+                                                <option>Maladie</option>
+                                                <option>Accident de travail</option>
+                                                <option>Pré-retraite programmée</option>
+                                                <option>Formation</option>
+                                                <option>Autre</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+
+                                    </div>
+
+                                </TD>
+                                <TD></TD>
+                                <TD></TD>
+                            </TR>
+                            <TR>
+                                <TD>Date début :</TD>
+                                <TD>
+                                    <input id="textBoxDebut"  readonly="readonly" type="text" name="debut"/>
+
+                                <TD>Date fin :</TD>
+                                <TD>
+                                    <input id="textBoxFin"  readonly="readonly" type="text" name="fin" />
+
+                            </TR>
+                        </TABLE>
+                    </TD>
+                    <TD align="center">
+                        <div class="col-2">
+                            <div class="input-group">
+
+                                <div class="p-t-10">
+                                    <label class="radio-container m-r-45">
+                                        <input type="radio" value="Journée" name="mety">
+                                        Journée
+
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">
+                                        <input type="radio" value="1/2. matin" name="mety">
+                                        1/2 j. matin
+
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">
+                                        <input type="radio" value="1/2. ap-midi" name="mety">
+                                        1/2 j. ap-midi
+
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </TD>
+                    <td width="10%">
+                        &nbsp;
+                    </td>
+
+                </TR>
+                <tr>
+                    <td></td>
+                    <td align="center">
+                        <button type="submit" id="buttonValideConge"  Width="130">Valider</button>
+                    </td>
+                    <td></td>
+
+                </tr>
+
+            </TABLE>
+        </panel>
+        <label id="labelDroitsAffiches"  enabled="False" visible="False" name="farany"></label>
+    </form>
+
+</body>
+</html>
+
